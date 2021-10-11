@@ -1,9 +1,11 @@
 package xunit;
 
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class TestCase {
+/**
+ * Composite Pattern 적용
+ */
+public class TestCase implements Test {
 
     protected final String name;
 
