@@ -11,6 +11,9 @@ public class TestCase {
         this.name = name;
     }
 
+    /**
+     * TemplateMethod Pattern 적용
+     */
     public void run() {
         setUp();
         try {
