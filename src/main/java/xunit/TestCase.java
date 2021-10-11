@@ -14,8 +14,7 @@ public class TestCase {
     /**
      * TemplateMethod Pattern 적용
      */
-    public TestResult run() {
-        TestResult testResult = new TestResult();
+    public void run(TestResult testResult) {
         testResult.testStarted();
         setUp();
 
@@ -26,7 +25,6 @@ public class TestCase {
             testResult.testFailed();
         }
         tearDown();
-        return testResult;
     }
 
     public void setUp() {
