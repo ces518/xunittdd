@@ -13,7 +13,7 @@ public class TestSuite implements Test {
 
     public TestSuite(Class<? extends Test> clazz) {
         Arrays.stream(clazz.getMethods())
-            .filter(m -> m.getName().startsWith("test"))
+            .filter(m -> m.getAnnotation(xunit.annotation.Test.class) != null)
             .forEach(t -> {
                 try {
                     add(clazz.getConstructor(String.class).newInstance(t.getName()));
