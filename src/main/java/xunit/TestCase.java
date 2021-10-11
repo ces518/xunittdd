@@ -14,8 +14,11 @@ public class TestCase {
     /**
      * TemplateMethod Pattern 적용
      */
-    public void run() {
+    public TestResult run() {
+        TestResult testResult = new TestResult();
+        testResult.testStarted();
         setUp();
+
         try {
             Method method = getClass().getMethod(name);
             method.invoke(this);
@@ -23,6 +26,7 @@ public class TestCase {
             throw new RuntimeException(e);
         }
         tearDown();
+        return testResult;
     }
 
     public void setUp() {
